@@ -11,12 +11,14 @@ var expect = chai.expect;
 
 module.exports = function() {
 
+
     this.Given(/^I run Cucumber with Protractor$/, function(next) {
         next();
     });
 
-    this.Given(/^I go on "([^"]*)"$/, function(url, next) {
-        browser.get('http://www-channelmanager-qa.aws.chotel.com/#/login');
+    this.Given(/^I go on choiceEDGE channel manager$/, function(next) {
+        browser.ignoreSynchronization = true
+        browser.get('#/');
         var title = browser.getTitle();
         //log.console(title);
         next();
@@ -37,7 +39,15 @@ module.exports = function() {
     });
 
     this.Then(/the title should equal "([^"]*)"$/, function(text, next) {
-        expect(browser.getTitle()).to.eventually.equal(text).and.notify(next);
+        //expect(browser.getTitle()).to.eventually.equal(text).and.notify(next);
+        var username = browser.driver.findElement(by.id('accountName'));
+        username.sendKeys('bestasura@gmail.com');
+
+        var password = browser.driver.findElement(by.id('password'));
+        password.sendKeys('Bithong12#');
+
+        var signIn = browser.driver.findElement(by.id('submit'));
+        signIn.click();
     });
 
 };

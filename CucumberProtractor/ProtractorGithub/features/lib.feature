@@ -11,5 +11,5 @@ Feature: Running Cucumber with Protractor
 
   @dev
   Scenario: Wrapping WebDriver
-    Given I go on "https://angularjs.org/"
-    Then the title should equal "AngularJS — Superheroic JavaScript MVW Framework"
+    Given I go on choiceEDGE channel manager
+    When the title should equal "AngularJS — Superheroic JavaScript MVW Framework"

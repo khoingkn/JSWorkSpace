@@ -19,7 +19,8 @@ module.exports = {
 
   // A base URL for your application under test.
   baseUrl:
-    'http://' + (process.env.HTTP_HOST || 'localhost') +
-          ':' + (process.env.HTTP_PORT || webServerDefaultPort)
+    //'http://' + (process.env.HTTP_HOST || 'localhost') +
+    //      ':' + (process.env.HTTP_PORT || webServerDefaultPort)
+    'https://us.battle.net/login/en/index?ref=http://us.battle.net/en/&app=com-root'
 
 };
